@@ -1,5 +1,4 @@
 header{
-    grid-column: 1/ span 4;
     border: 2px solid black;
     border-radius: 5px;
     margin: 5px;
@@ -15,8 +14,6 @@ main{
     margin: 5px;
 }
 footer{
-    grid-row: 3/4;
-    grid-column: 1/span 4;
     border: 2px solid black;
     border-radius: 5px;
     margin: 5px;
@@ -26,20 +23,78 @@ footer{
     border-radius: 5px;
     margin: 5px;
 }
+h2{
+    text-align: center;
+}
 
 @media screen and (max-width: 640px){
     body{
         display: flex;
         flex-direction: column;
     }
+    header{
+        text-align: center;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    footer{
+        text-align: center;
+    }
+
 }
 @media screen and (min-width: 641px) and (max-width: 1007px){
-
+    header{
+        text-align: center;
+        grid-column: 1/ span4;
+        grid-row: 1/2;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    footer{
+        grid-column: 1/span4;
+        text-align: center;
+    }
 }
 @media screen and (min-width: 1008px){
     body{
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto auto auto;
         grid-template-rows: auto auto auto;
+    }
+    header{
+        grid-column: 1/ span 4;
+        text-align: center;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    main{
+        display: flex;
+        flex-direction: row;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    footer{
+        grid-row: 3/4;
+        grid-column: 1/span 4;
+        text-align: center;
     }
 }
